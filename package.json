@@ -1,11 +1,11 @@
 {
-  "name": "personal-page",
+  "name": "zhiganov",
   "version": "1.0.0",
   "description": "Web Developer Personal Page",
   "author": "Zhiganov Dmitriy",
   "license": "ISC",
-  "homepage": "",
-  "main": "",
+  "homepage": "https://github.com/delawere/zhiganov",
+  "main": "gulpfile.js",
   "dependencies": {
     "normalize.less": "^1.0.0"
   },
