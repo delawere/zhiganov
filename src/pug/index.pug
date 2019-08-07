@@ -1,0 +1,207 @@
+doctype html
+html(lang="ru-RU")
+    head
+        meta(charset="utf-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        title Zhiganov Dmitriy 
+        meta(name="description" content="Web developer personal page")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(rel="shortcut icon" href="./icons/icon.ico" type="image/x-icon")
+        link(rel="stylesheet" type="text/css" href="./css/main.css")
+        link(href="https://fonts.googleapis.com/css?family=Montserrat:700|Source+Sans+Pro&display=swap" rel="stylesheet")
+    body
+        svg(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="sprite" style="display:none")
+            symbol(id="icon-radio-checked" viewBox="0 0 32 32")
+                title radio-checked
+                path(d="M16 0c-8.837 0-16 7.163-16 16s7.163 16 16 16 16-7.163 16-16-7.163-16-16-16zM16 28c-6.627 0-12-5.373-12-12s5.373-12 12-12c6.627 0 12 5.373 12 12s-5.373 12-12 12zM10 16c0-3.314 2.686-6 6-6s6 2.686 6 6c0 3.314-2.686 6-6 6s-6-2.686-6-6z")
+            symbol(id="icon-radio-unchecked" viewBox="0 0 32 32")
+                title radio-unchecked
+                path(d="M16 0c-8.837 0-16 7.163-16 16s7.163 16 16 16 16-7.163 16-16-7.163-16-16-16zM16 28c-6.627 0-12-5.373-12-12s5.373-12 12-12c6.627 0 12 5.373 12 12s-5.373 12-12 12z")      
+            symbol(id="icon-close-menu" viewBox="0 0 32 32")
+                title close
+                path(d="M19.414 27.414l10-10c0.781-0.781 0.781-2.047 0-2.828l-10-10c-0.781-0.781-2.047-0.781-2.828 0s-0.781 2.047 0 2.828l6.586 6.586h-19.172c-1.105 0-2 0.895-2 2s0.895 2 2 2h19.172l-6.586 6.586c-0.39 0.39-0.586 0.902-0.586 1.414s0.195 1.024 0.586 1.414c0.781 0.781 2.047 0.781 2.828 0z")
+        div(class="body-cover-bg body-cover-bg_hidden")
+        header(class="header")
+            .header-wrapper
+                nav(class="nav")
+                    button(class="menu-button") &#9776;
+                    div(class="nav-list-wrapper nav-list_hidden")
+                        button(class="close-menu-button close-menu-button_onclose")
+                            svg(class="nav__icon-close-menu")
+                                use(xlink:href="#icon-close-menu")
+                        ul(class="nav-list")
+                            li(class="nav-list_item") 
+                                span(class="nav-link about-link" tabindex="0") About
+                            li(class="nav-list_item") 
+                                span(class="nav-link portfolio-link" tabindex="0") Portfolio
+                            li(class="nav-list_item") 
+                                span(class="nav-link resume-link" tabindex="0") Resume
+                            li(class="nav-list_item") 
+                                span(class="nav-link contacts-link" tabindex="0") Contacts
+                    div(class="progress-bar hidden")
+                h1(class="header__title")
+                    img(class="" alt="personal-photo" src="./icons/icon.ico" width="50" loading="lazy")
+                    span(class="header__title_small") Frontend-Developer
+                    span(class="header__title_big") Zhiganov Dmitriy
+                button(class="lang-button")
+                    svg(id="icon-translate" class="icon-translate" viewBox="0 0 20 20")
+                        title translate
+                        path(d="M7.41 9l2.24 2.24-0.83 2-2.82-2.84-3.3 3.3-1.4-1.42 3.28-3.28-0.88-0.88c-0.53-0.53-1-1.3-1.3-2.12h2.2c0.15 0.28 0.33 0.53 0.51 0.7l0.89 0.9 0.88-0.88c0.6-0.62 1.12-1.88 1.12-2.72h-8v-2h5v-2h2v2h5v2h-2c0 1.37-0.74 3.15-1.7 4.12l-0.9 0.88zM11.25 17l-1.25 3h-2l5-12h2l5 12h-2l-1.25-3h-5.5zM12.080 15h3.84l-1.92-4.6-1.92 4.6z")
+                    span(class="lang-button__caption") Translate
+                aside(class="lang-menu lang-menu_hidden")
+                    ul(class="lang-menu__list")
+                        li(class="lang-menu__item") 
+                            label(class="lang-menu__label" data-lang="en")
+                                input(class="lang-menu__input" type="radio" name="radio-lang" checked) 
+                                svg(class="lang-menu__radio-icon unchecked")
+                                    use(xlink:href="#icon-radio-unchecked")
+                                svg(class="lang-menu__radio-icon checked")
+                                    use(xlink:href="#icon-radio-checked")
+                                | English
+                        li(class="lang-menu__item") 
+                            label(class="lang-menu__label" data-lang="ru")
+                                input(class="lang-menu__input" type="radio" name="radio-lang")
+                                svg(class="lang-menu__radio-icon unchecked")
+                                    use(xlink:href="#icon-radio-unchecked")
+                                svg(class="lang-menu__radio-icon checked")
+                                    use(xlink:href="#icon-radio-checked")
+                                | Русский  
+        main(class="main")
+            section(class="section about-section")
+                .section-wrapper
+                    .section__title-wrapper
+                        h2(class="section__title section__title_green-bg") About me
+                    .content 
+                        .photo-content
+                            picture(class="personal_photo_pic lazy")
+                                source(type="image/webp" srcset="./img/placeholders/personal_photo_ph.png" data-srcset="./img/webp/personal-photo.webp")
+                                source(type="image/jpeg" srcset="./img/placeholders/personal_photo_ph.png" data-srcset="./img/personal-photo.jpeg")
+                                img(class="photo-content_img" src="./img/placeholders/personal_photo_ph.png" data-src="./img/personal-photo.jpeg" alt="personal-photo" loading="lazy")
+                        .text-block
+                            p(class="text-content")
+                                | My name is Dmitriy Zhiganov and I'm from Russia, Kazan.
+                                | I have been doing web-development for 2 years, 
+                                | where the first year I spent on self-education and
+                                | then I started working in Russian IT company, 
+                                | which supports the medical web-environment in hospitals in Russian regions.
+                                | I work with technologies such as vanilla Java Script, data base Oracle, SQL and PHP. 
+                                | I also have experience in developing simple web-applications on React and JS.
+                            ul(class="skills-list")
+                                li(class="skills-item main-skills")
+                                    span(class="label_bold") My main skills: 
+                                    span(class="label") JS, SQL, CSS, HTML.
+                                li(class="skills-item add-exp") 
+                                    span(class="label_bold") Additional experience: 
+                                    span(class="label") React, Redux, styled-components, LESS, Pug, Gulp, Firebase.
+            section(class="section portfolio-section section_bg-yellow hidden") 
+                .section-wrapper
+                    .section__title-wrapper
+                        h2(class="section__title") Projects
+                    ul(class="cards")
+                        li(class="card card_tiny")
+                            picture(class="lazy")
+                                source(type="image/webp" srcset="./img/placeholders/yellow_ph.png" data-srcset="./img/webp/tinyone.webp")
+                                source(type="image/jpeg" srcset="./img/placeholders/yellow_ph.png" data-srcset="./img/tinyone.png")
+                                img(class="card_img" src="./img/placeholders/yellow_ph.png" data-src="./img/tinyone.png" alt="application_photo" loading="lazy")
+                            .card-description
+                                h3(class="card-description__title")
+                                    span(class="card-description__title_type") Browser Game
+                                    span(class="card-description__title_name") Memory
+                                .card-links 
+                                    ul(class="cald-links_list")
+                                        li(class="card-links_item")
+                                            a(class="card-link demo" href="https://github.com/delawere/tinyone" target="_blank" rel="noopener") View Demo
+                                        li(class="card-links_item")
+                                            a(class="card-link code" href="https://github.com/delawere/tinyone" target="_blank" rel="noopener") View Code
+                        li(class="card card_note")
+                            picture(class="lazy")
+                                source(type="image/webp" srcset="./img/placeholders/grey_ph.png" data-srcset="./img/webp/notes.webp")
+                                source(type="image/jpeg" srcset="./img/placeholders/grey_ph.png" data-srcset="./img/notes.png")
+                                img(class="card_img" src="./img/placeholders/grey_ph.png" data-src="./img/notes.png" alt="application_photo" loading="lazy")
+                            .card-description
+                                h3(class="card-description__title")
+                                    span(class="card-description__title_type") Web Application 
+                                    span(class="card-description__title_name") Notes
+                                .card-links 
+                                    ul(class="cald-links_list")
+                                        li(class="card-links_item")
+                                            a(class="card-link demo" href="https://calendarwithtodo.herokuapp.com/" target="_blank" rel="noopener") View Demo
+                                        li(class="card-links_item")
+                                            a(class="card-link code" href="https://github.com/delawere/react-meeting-planer-app" target="_blank" rel="noopener") View Code
+                        li(class="card card_memory")
+                            picture(class="lazy")
+                                source(type="image/webp" srcset="./img/placeholders/green_ph.png" data-srcset="./img/webp/memory.webp")
+                                source(type="image/jpeg" srcset="./img/placeholders/green_ph.png" data-srcset="./img/memory.png")
+                                img(class="card_img" src="./img/placeholders/green_ph.png" data-src="./img/memory.png" alt="application_photo" loading="lazy")
+                            .card-description
+                                h3(class="card-description__title")
+                                    span(class="card-description__title_type") Landing Page 
+                                    span(class="card-description__title_name") Tinyone
+                                .card-links 
+                                    ul(class="cald-links_list")
+                                        li(class="card-links_item")
+                                            a(class="card-link demo" href="https://delawere.github.io/" target="_blank" rel="noopener") View Demo
+                                        li(class="card-links_item")
+                                            a(class="card-link code" href="https://github.com/delawere/delawere.github.io" target="_blank" rel="noopener") View Code
+            section(class="section resume-section hidden") 
+                .section-wrapper
+                    .section__title-wrapper
+                        h2(class="section__title section__title_green-bg") Educations & Careers
+                    .resume-section_timeline-block 
+                        ul(class="jobs-list")
+                            li(class="job-list_item html-academy")
+                                .job-item_text
+                                    h3
+                                        span(class="job-list__title") HTML-Academy
+                                        span(class="job-item_period") March 2018 - May 2018
+                                    p(class="paragraph") 
+                                        span(class="label_bold") Achievements: 
+                                        span(class="label") Finished the course Java Script level 1 and successfuly passed the exam project.
+                                        span(class="label_newline") You can find the academic project on my gitHub.
+                                    footer(class="job-list-item_footer") 
+                                        ul(class="company-info-list")
+                                            li(class="company-info-list_item")
+                                                a(class="company-info_link" href="https://goo.gl/maps/epiuZkArqgLNd2kz8" target="_blank" rel="noopener") Russia, Saint-Petersburg
+                                            li(class="company-info-list_item")
+                                                a(class="company-info_link" href="https://htmlacademy.ru/" target="_blank" rel="noopener") Website
+                            li(class="job-list_item bars-group")
+                                .job-item_text
+                                    h3
+                                        span(class="job-list__title") BARS-Group
+                                        span(class="job-item_period") June 2018 - Now
+                                    p(class="paragraph position") 
+                                        span(class="label_bold") Position: 
+                                        span(class="label") FullStack Developer
+                                    p(class="paragraph stack")     
+                                        span(class="label_bold") Stack: 
+                                        span(class="label") JS, CSS, PHP, SQL, PL/SQL, Oracle
+                                    p(class="paragraph achiev") 
+                                        span(class="label_bold") Achievements: 
+                                        span(class="label") 
+                                            | I work on one of the biggest projects in my company, 
+                                            | writing the project documentation and guides, working on improving company’s framework,
+                                            | training new employees.
+                                    footer(class="job-list-item_footer") 
+                                        ul(class="company-info-list")
+                                            li(class="company-info-list_item")
+                                                a(class="company-info_link" href="https://goo.gl/maps/r3YzqW5rQ2enyj6V6" target="_blank" rel="noopener") Russia, Kazan
+                                            li(class="company-info-list_item")
+                                                a(class="company-info_link" href="https://bars.group/" target="_blank" rel="noopener") Website
+        footer(class="footer section contacts-section section_bg-blue hidden") 
+            .section-wrapper
+                .section__title-wrapper
+                    h2(class="section__title") Contacts
+                ul(class="contacts-list")
+                    li(class="contacts-list_item")
+                        a(class="label__bold phone" href="tel:+79503253688" rel="nofollow") Phone
+                    li(class="contacts-list_item")
+                        a(class="label__bold email" href="mailto:delawere2008@gmail.com") Email
+                    li(class="contacts-list_item")
+                        a(class="label__bold" href="https://t.me/dmitriyZhiganov" target="_blank" rel="noopener") Telegram
+                    li(class="contacts-list_item")
+                        a(class="label__bold" href="https://github.com/delawere" target="_blank" rel="noopener") GitHub
+            .copyright Copyright &#169; 2019 Zhiganov Dmitriy 
+        script(src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js" defer)
+        script(src="https://www.gstatic.com/firebasejs/6.2.4/firebase-firestore.js" defer)
+        script(src="./js/main.min.js" defer)
+
