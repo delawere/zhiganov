@@ -1,15 +1,15 @@
 "use strict";
 
 (() => {
-  const LAZY_LOAD_PICTURES = document.querySelectorAll("picture.lazy");
   const SCROLL_TOP = window.pageYOffset;
   const DELAY = 20;
   const THRESHOLD = 400;
 
   document.addEventListener("DOMContentLoaded", () => {
-    let lazyloadThrottleTimeout;
-
     const lazyLoad = () => {
+      let lazyloadThrottleTimeout;
+      let LAZY_LOAD_PICTURES = document.querySelectorAll("picture.lazy");
+
       if (lazyloadThrottleTimeout) {
         clearTimeout(lazyloadThrottleTimeout);
       }
