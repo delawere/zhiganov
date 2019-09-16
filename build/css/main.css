@@ -306,7 +306,7 @@ template {
 /* Z_INDEXES */
 :root {
   box-sizing: border-box;
-  font-size: 5vw;
+  font-size: 3vw;
 }
 @media (min-width: 800px) {
   :root {
@@ -846,11 +846,17 @@ body {
   display: flex;
   padding: 0;
   margin: auto;
+  flex-wrap: wrap;
+}
+@media (min-width: 800px) {
+  .cards {
+    flex-wrap: nowrap;
+  }
 }
 .card {
   margin: 0 auto;
   font-size: 0;
-  width: 35%;
+  width: 100%;
   position: relative;
   padding: 0;
   background-color: #fff;
@@ -859,6 +865,11 @@ body {
   color: rgba(0, 0, 0, 0.6);
   font-weight: 600;
   border-radius: 3em;
+}
+@media (min-width: 800px) {
+  .card {
+    width: 35%;
+  }
 }
 .card:after {
   opacity: 0;

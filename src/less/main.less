@@ -28,7 +28,7 @@
 
 :root {
   box-sizing: border-box;
-  font-size: 5vw;
+  font-size: 3vw;
 
   @media (min-width: @tablet) {
     font-size: calc(0.75em + 0.2vw);
@@ -620,12 +620,17 @@ body {
   display: flex;
   padding: 0;
   margin: auto;
+  flex-wrap: wrap;
+
+  @media(min-width: @tablet) {
+    flex-wrap: nowrap;
+  }
 }
 
 .card {
   margin: 0 auto;
   font-size: 0;
-  width: 35%;
+  width: 100%;
   position: relative;
   padding: 0;
   background-color: @white;
@@ -634,6 +639,10 @@ body {
   color: @lightGray;
   font-weight: 600;
   border-radius: 3em;
+
+  @media(min-width: @tablet) {
+    width: 35%;
+  }
 
   &:after {
     opacity: 0;
