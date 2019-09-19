@@ -346,7 +346,6 @@ body {
   width: 100%;
   position: relative;
   padding-top: 1em;
-  
 
   @media (min-width: @tablet) {
     width: calc(100% - 0.75em * 2);
@@ -403,15 +402,21 @@ body {
 
 .icon-translate {
   margin-right: 0.25em;
-  width: 1em;
-  height: 1em;
+  width: 2em;
+  height: 2em;
   fill: @mainRed;
   transition: 200ms;
+
+  @media (min-width: @tablet) {
+    width: 1em;
+    height: 1em;
+  }
 }
 
 .lang-menu {
+  font-size: 1.5rem;
   position: absolute;
-  right: 0.25em;
+  right: 0.6em;
   top: calc(100% + 0.5em);
   padding: 0.25em 0.5em;
   background-color: #f2f5f6;
@@ -422,6 +427,11 @@ body {
   transform: translateY(0);
   opacity: 1;
   box-shadow: 2px 1px 4px rgba(0, 0, 0, 0.2);
+
+  @media (min-width: @tablet) {
+    right: 0.25em;
+    font-size: 1rem;
+  }
 }
 
 .lang-menu_hidden {
@@ -622,7 +632,7 @@ body {
   margin: auto;
   flex-wrap: wrap;
 
-  @media(min-width: @tablet) {
+  @media (min-width: @tablet) {
     flex-wrap: nowrap;
   }
 }
@@ -640,7 +650,7 @@ body {
   font-weight: 600;
   border-radius: 3em;
 
-  @media(min-width: @tablet) {
+  @media (min-width: @tablet) {
     width: 35%;
   }
 

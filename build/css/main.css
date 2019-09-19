@@ -661,14 +661,21 @@ body {
 }
 .icon-translate {
   margin-right: 0.25em;
-  width: 1em;
-  height: 1em;
+  width: 2em;
+  height: 2em;
   fill: #f25757;
   transition: 200ms;
 }
+@media (min-width: 800px) {
+  .icon-translate {
+    width: 1em;
+    height: 1em;
+  }
+}
 .lang-menu {
+  font-size: 1.5rem;
   position: absolute;
-  right: 0.25em;
+  right: 0.6em;
   top: calc(100% + 0.5em);
   padding: 0.25em 0.5em;
   background-color: #f2f5f6;
@@ -679,6 +686,12 @@ body {
   transform: translateY(0);
   opacity: 1;
   box-shadow: 2px 1px 4px rgba(0, 0, 0, 0.2);
+}
+@media (min-width: 800px) {
+  .lang-menu {
+    right: 0.25em;
+    font-size: 1rem;
+  }
 }
 .lang-menu_hidden {
   transform: translateY(2em);
