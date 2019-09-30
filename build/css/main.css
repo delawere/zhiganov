@@ -624,12 +624,13 @@ body {
 .lang-button {
   display: block;
   border: none;
-  border-radius: 2em;
-  padding: 0.35em 0.75em;
+  border-radius: 1.5em;
+  padding: 0.45em 0.85em;
   margin-left: auto;
   background-color: transparent;
   color: #f25757;
   font-size: 1rem;
+  font-weight: 500;
   cursor: pointer;
   transition: 100ms;
   outline: none;
@@ -673,11 +674,11 @@ body {
   }
 }
 .lang-menu {
+  overflow: hidden;
   font-size: 1.5rem;
   position: absolute;
   right: 0.6em;
   top: calc(100% + 0.5em);
-  padding: 0.25em 0.5em;
   background-color: #f2f5f6;
   border-radius: 0.25em;
   color: #272727;
@@ -707,6 +708,9 @@ body {
 .lang-menu__item {
   padding: 0.5em 4em 0.5em 0.5em;
 }
+.lang-menu__item:hover {
+  background-color: #d3d3d3;
+}
 .lang-menu__label {
   cursor: pointer;
   display: block;
@@ -724,6 +728,7 @@ body {
   height: 1em;
   fill: #f25757;
   margin-left: -1.6em;
+  margin-top: 2px;
 }
 .lang-menu__input:checked ~ .checked {
   visibility: visible;

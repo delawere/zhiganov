@@ -1,6 +1,6 @@
 {
   "name": "zhiganov",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Web Developer Personal Page",
   "author": "Zhiganov Dmitriy",
   "license": "ISC",
@@ -27,8 +27,7 @@
   },
   "scripts": {
     "start": "gulp",
-    "build": "gulp build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "gulp build"
   },
   "browserslist": [
     "ie 11",
