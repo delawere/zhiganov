@@ -10,7 +10,4 @@
 >* LESS
 >* Gulp
 
-## TODO
-- [x] ~~Russian Language~~
-- [ ] Add PDF Resume
  
