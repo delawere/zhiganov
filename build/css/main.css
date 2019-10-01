@@ -706,6 +706,7 @@ body {
   margin: 0;
 }
 .lang-menu__item {
+  cursor: pointer;
   padding: 0.5em 4em 0.5em 0.5em;
 }
 .lang-menu__item:hover {

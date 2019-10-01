@@ -1,14 +1,15 @@
-"use strict";
+'use strict';
 
 (() => {
-  const BODY = document.querySelector("body");
-  const LANG_BUTTON = document.querySelector(".lang-button");
-  const LANG_MENU = document.querySelector(".lang-menu");
-  const LANG_MENU_CLASS = "lang-menu";
-  const LANG_MENU_CLASS_HIDDEN = "lang-menu_hidden";
-  const LANG_MENU_CLASS_ACTIVE = "lang-button_active";
-  const RADIO_BUTTONS = LANG_MENU.querySelectorAll(".lang-menu__label");
-  const BODY_COVER = document.querySelector(".body-cover-bg");
+  const BODY = document.querySelector('body');
+  const LANG_BUTTON = document.querySelector('.lang-button');
+  const LANG_MENU = document.querySelector('.lang-menu');
+  const LANG_MENU_CLASS = 'lang-menu';
+  const LANG_MENU_CLASS_HIDDEN = 'lang-menu_hidden';
+  const LANG_MENU_CLASS_ACTIVE = 'lang-button_active';
+  const LANG_MENU_ITEMS = LANG_MENU.querySelectorAll('.lang-menu__item');
+  const RADIO_BUTTONS = LANG_MENU.querySelectorAll('.lang-menu__input');
+  const BODY_COVER = document.querySelector('.body-cover-bg');
 
   const findAncestor = (target, parentClassName) => {
     while (
@@ -21,14 +22,14 @@
   const onClosePopup = () => {
     LANG_MENU.classList.add(LANG_MENU_CLASS_HIDDEN);
     LANG_BUTTON.classList.remove(LANG_MENU_CLASS_ACTIVE);
-    BODY.removeEventListener("click", onOutsideClick);
+    BODY.removeEventListener('click', onOutsideClick);
   };
 
   const onOutsideClick = event => {
     const isOutsideClick = !findAncestor(event.target, LANG_MENU_CLASS);
 
     if (isOutsideClick) {
-      if (typeof onClosePopup === "function") {
+      if (typeof onClosePopup === 'function') {
         onClosePopup();
       }
     }
@@ -40,25 +41,30 @@
     LANG_BUTTON.classList.toggle(LANG_MENU_CLASS_ACTIVE);
 
     if (!LANG_MENU.classList.contains(LANG_MENU_CLASS_HIDDEN)) {
-      BODY.addEventListener("click", onOutsideClick);
+      BODY.addEventListener('click', onOutsideClick);
     }
   };
 
   const hideBodyCover = () => {
     onClosePopup();
-    BODY_COVER.classList.add("body-cover-bg_hidden");
+    BODY_COVER.classList.add('body-cover-bg_hidden');
   };
 
-  RADIO_BUTTONS.forEach(button => {
-    button.addEventListener("click", event => {
-      BODY_COVER.classList.remove("body-cover-bg_hidden");
-      window.changeLang(event.currentTarget.dataset.lang, () =>
+  LANG_MENU_ITEMS.forEach(item => {
+    item.addEventListener('click', event => {
+      const currentTarget = event.currentTarget;
+      const radioButton = currentTarget.querySelector('.lang-menu__input');
+
+      BODY_COVER.classList.remove('body-cover-bg_hidden');
+      radioButton.checked = true;
+      
+      window.changeLang(currentTarget.dataset.lang, () =>
         setTimeout(hideBodyCover, 500)
       );
     });
   });
 
-  LANG_BUTTON.addEventListener("click", onLangButtonClick);
+  LANG_BUTTON.addEventListener('click', onLangButtonClick);
 
   window.findAncestor = findAncestor;
   window.onOutsideClick = onOutsideClick;
