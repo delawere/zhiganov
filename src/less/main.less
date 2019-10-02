@@ -7,9 +7,14 @@
 @darkBlue: #1a4480;
 @mainGreen: rgb(38, 224, 168);
 @mainRed: #f25757;
+@dark-main-red: rgb(255, 121, 123);
 @labelRed: #e90c32;
 @copyright: rgb(62, 72, 86);
 @header_height_mobile: 8.5vh;
+
+/* Dark Theme */
+@dark-color: #fafafa;
+@dark-background-color: #121212;
 
 @tablet: 800px;
 @large-tablet: 1000px;
@@ -50,6 +55,13 @@ body {
   background: @white;
   color: @black;
   font-family: 'Source Sans Pro', 'sans-serif';
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  body {
+    background: @dark-background-color;
+    color: @dark-color;
+  }
 }
 
 .body-cover-bg {
@@ -359,29 +371,40 @@ body {
 }
 
 .lang-button {
+  line-height: 1.5;
   display: block;
   border: none;
   border-radius: 1.5em;
-  padding: 0.45em 0.85em;
+  padding: 0.25em 0.85em;
   margin-left: auto;
   background-color: transparent;
   color: @mainRed;
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
   transition: 100ms;
   outline: none;
+  transition: 150ms ease-in-out;
 
   @media (min-width: @tablet) {
     border: 2px solid @mainRed;
   }
 
+  @media screen and (prefers-color-scheme: dark) {
+    color: @dark-main-red;
+  }
+
   &:hover {
-    color: darken(@mainRed, 20%);
+    color: @white;
+    background-color: @mainRed;
+
+    @media screen and (prefers-color-scheme: dark) {
+      color: @dark-main-red;
+    }
   }
 
   &:hover > svg {
-    fill: darken(@mainRed, 20%);
+    fill: @white;
   }
 }
 
@@ -402,7 +425,8 @@ body {
 }
 
 .icon-translate {
-  margin-right: 0.25em;
+  margin-bottom: -2px;
+  margin-right: 0.2em;
   width: 2em;
   height: 2em;
   fill: @mainRed;
@@ -411,6 +435,10 @@ body {
   @media (min-width: @tablet) {
     width: 1em;
     height: 1em;
+  }
+
+  @media screen and (prefers-color-scheme: dark) {
+    color: @dark-main-red;
   }
 }
 
@@ -477,6 +505,10 @@ body {
   fill: @mainRed;
   margin-left: -1.6em;
   margin-top: 2px;
+
+  @media screen and (prefers-color-scheme: dark) {
+    color: @dark-main-red;
+  }
 }
 
 .lang-menu__input:checked ~ .checked {
@@ -502,7 +534,7 @@ body {
   width: 100%;
   margin: auto;
   font-size: 1.2rem;
-  background-color: @white;
+  background-color: inherit;
 }
 
 .section {
@@ -517,10 +549,7 @@ body {
   }
 }
 
-.resume-section {
-  background-color: #f2f5f6;
-}
-
+.resume-section,
 .section_bg-yellow {
   background-color: #f2f5f6;
 }
@@ -528,6 +557,17 @@ body {
 .section_bg-blue {
   background-color: #1c1d25;
   color: @white;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  .resume-section,
+  .section_bg-yellow {
+    background: @dark-background-color;
+  }
+
+  .section_bg-blue {
+    background-color: rgb(24, 24, 24);
+  }
 }
 
 .section-wrapper {
@@ -630,6 +670,10 @@ body {
   color: @labelRed;
   font-weight: 600;
   position: relative;
+
+  @media screen and (prefers-color-scheme: dark) {
+    color: @dark-main-red;
+  }
 }
 
 .cards {
@@ -697,12 +741,23 @@ body {
 }
 
 .card_tiny,
-.card-memory {
+.card_memory {
   background: @white;
 }
 
 .card_note {
   background-color: #f0d6d6;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  .card_tiny,
+  .card_memory {
+    background-color: rgb(24, 24, 24);
+  }
+
+  .card_note {
+    background-color: @dark-main-red;
+  }
 }
 
 .card_img {
@@ -809,6 +864,11 @@ body {
 
   @media (min-width: @tablet) {
     padding: 0.5em 2em 1.5em;
+  }
+
+  @media screen and (prefers-color-scheme: dark) {
+    color: @dark-color;
+    background: rgb(24, 24, 24);
   }
 }
 
@@ -955,6 +1015,11 @@ body {
 .icon__link {
   stroke: @mainRed;
   fill: @mainRed;
+
+  @media screen and (prefers-color-scheme: dark) {
+    stroke: @dark-main-red;
+    fill: @dark-main-red;
+  }
 }
 
 .copyright {
@@ -965,4 +1030,8 @@ body {
 
 .marked {
   color: @mainRed;
+
+  @media screen and (prefers-color-scheme: dark) {
+    color: @dark-main-red;
+  }
 }
