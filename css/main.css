@@ -1115,6 +1115,11 @@ body {
   color: #272727;
   font-family: Arial, Helvetica, sans-serif;
 }
+@media screen and (prefers-color-scheme: dark) {
+  .job-list__title {
+    color: #fff;
+  }
+}
 .job-item_period {
   display: block;
   white-space: nowrap;
