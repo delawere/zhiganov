@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Жиганов Дмитрий</title>
+    <meta name="description" content="Web developer personal page" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="../icons/icon.ico" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="../css/main.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:700|Source+Sans+Pro&amp;display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      id="sprite"
+      style="display:none"
+    >
+      <symbol id="icon-radio-checked" viewBox="0 0 32 32">
+        <title>radio-checked</title>
+        <path
+          d="M16 0c-8.837 0-16 7.163-16 16s7.163 16 16 16 16-7.163 16-16-7.163-16-16-16zM16 28c-6.627 0-12-5.373-12-12s5.373-12 12-12c6.627 0 12 5.373 12 12s-5.373 12-12 12zM10 16c0-3.314 2.686-6 6-6s6 2.686 6 6c0 3.314-2.686 6-6 6s-6-2.686-6-6z"
+        ></path>
+      </symbol>
+      <symbol id="icon-radio-unchecked" viewBox="0 0 32 32">
+        <title>radio-unchecked</title>
+        <path
+          d="M16 0c-8.837 0-16 7.163-16 16s7.163 16 16 16 16-7.163 16-16-7.163-16-16-16zM16 28c-6.627 0-12-5.373-12-12s5.373-12 12-12c6.627 0 12 5.373 12 12s-5.373 12-12 12z"
+        ></path>
+      </symbol>
+      <symbol id="icon-close-menu" viewBox="0 0 32 32">
+        <title>close</title>
+        <path
+          d="M19.414 27.414l10-10c0.781-0.781 0.781-2.047 0-2.828l-10-10c-0.781-0.781-2.047-0.781-2.828 0s-0.781 2.047 0 2.828l6.586 6.586h-19.172c-1.105 0-2 0.895-2 2s0.895 2 2 2h19.172l-6.586 6.586c-0.39 0.39-0.586 0.902-0.586 1.414s0.195 1.024 0.586 1.414c0.781 0.781 2.047 0.781 2.828 0z"
+        ></path>
+      </symbol>
+    </svg>
+    <div class="body-cover-bg body-cover-bg_hidden"></div>
+    <div class="lang-container">
+      <button class="lang-button">
+        <svg class="icon-translate" id="icon-translate" viewBox="0 0 20 20">
+          <title>translate</title>
+          <path
+            d="M7.41 9l2.24 2.24-0.83 2-2.82-2.84-3.3 3.3-1.4-1.42 3.28-3.28-0.88-0.88c-0.53-0.53-1-1.3-1.3-2.12h2.2c0.15 0.28 0.33 0.53 0.51 0.7l0.89 0.9 0.88-0.88c0.6-0.62 1.12-1.88 1.12-2.72h-8v-2h5v-2h2v2h5v2h-2c0 1.37-0.74 3.15-1.7 4.12l-0.9 0.88zM11.25 17l-1.25 3h-2l5-12h2l5 12h-2l-1.25-3h-5.5zM12.080 15h3.84l-1.92-4.6-1.92 4.6z"
+          ></path></svg
+        ><span class="lang-button__caption">Перевод</span>
+      </button>
+      <aside class="lang-menu lang-menu_hidden">
+        <ul class="lang-menu__list">
+          <li class="lang-menu__item">
+            <label class="lang-menu__label" data-lang="/">
+              <input
+                class="lang-menu__input radio__en"
+                type="radio"
+                name="radio-lang"
+                checked
+              />
+              <svg class="lang-menu__radio-icon unchecked">
+                <use xlink:href="#icon-radio-unchecked"></use>
+              </svg>
+              <svg class="lang-menu__radio-icon checked">
+                <use xlink:href="#icon-radio-checked"></use></svg
+              >English
+            </label>
+          </li>
+          <li class="lang-menu__item">
+            <label class="lang-menu__label" data-lang="/ru">
+              <input class="lang-menu__input radio__ru" type="radio" name="radio-lang" />
+              <svg class="lang-menu__radio-icon unchecked">
+                <use xlink:href="#icon-radio-unchecked"></use>
+              </svg>
+              <svg class="lang-menu__radio-icon checked">
+                <use xlink:href="#icon-radio-checked"></use></svg
+              >Русский
+            </label>
+          </li>
+        </ul>
+      </aside>
+    </div>
+    <main class="main">
+      <section class="section about-section">
+        <div class="section-wrapper">
+          <div class="section__title-wrapper">
+            <h2 class="section__title section__title_about">Обо мне</h2>
+          </div>
+          <div class="content">
+            <div class="photo-content">
+              <picture class="personal_photo_pic lazy">
+                <source
+                  type="image/webp"
+                  srcset="../img/placeholders/personal_photo_ph.png"
+                  data-srcset="../img/webp/personal-photo.webp"
+                />
+                <source
+                  type="image/jpeg"
+                  srcset="../img/placeholders/personal_photo_ph.png"
+                  data-srcset="../img/personal-photo.jpg"
+                />
+                <img
+                  class="photo-content_img"
+                  src="../img/placeholders/personal_photo_ph.png"
+                  data-src="../img/personal-photo.jpg"
+                  alt="personal-photo"
+                />
+              </picture>
+            </div>
+            <div class="text-block">
+              <p class="text-content">
+                Меня зовут Жиганов Дмитрий, я веб-разработчик и живу в России,
+                город Казань. Я занимаюсь веб разработкой последние 2 года,
+                первый год я занимался обучением, после этого устроился на
+                работу в IT компанию, где я занимаюсь разработкой и поддержкой
+                веб-приложения для больниц во многих регионах Татарстана и
+                России. Я работаю с java script, php, sql и базой данных Oracle.
+                В свободное время изучаю новые веб-технологии, читаю блоги и
+                слушаю подкасты интересных людей.
+              </p>
+              <ul class="skills-list">
+                <li class="skills-item main-skills">
+                  <span class="label_bold">Навыки: </span
+                  ><span class="label">JS, SQL, CSS, HTML.</span>
+                </li>
+                <li class="skills-item add-exp">
+                  <span class="label_bold">Дополнительный опыт: </span
+                  ><span class="label"
+                    >React, Redux, styled-components, LESS, Pug, Gulp,
+                    Firebase.</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section portfolio-section section_bg-yellow hidden">
+        <div class="section-wrapper">
+          <div class="section__title-wrapper">
+            <h2 class="section__title">Портфолио</h2>
+          </div>
+          <ul class="cards">
+            <li class="card card_tiny">
+              <picture class="lazy">
+                <source
+                  type="image/webp"
+                  srcset="../img/placeholders/yellow_ph.png"
+                  data-srcset="../img/webp/tinyone.webp"
+                />
+                <source
+                  type="image/jpeg"
+                  srcset="../img/placeholders/yellow_ph.png"
+                  data-srcset="../img/tinyone.png"
+                />
+                <img
+                  class="card_img"
+                  src="../img/placeholders/yellow_ph.png"
+                  data-src="../img/tinyone.png"
+                  alt="application_photo"
+                />
+              </picture>
+              <div class="card-description">
+                <h3 class="card-description__title">
+                  <span class="card-description__title_type">Лендинг</span
+                  ><span class="card-description__title_name">Tinyone</span>
+                </h3>
+                <div class="card-links">
+                  <ul class="cald-links_list">
+                    <li class="card-links_item">
+                      <a
+                        class="card-link demo"
+                        href="https://github.com/delawere/tinyone"
+                        target="_blank"
+                        rel="noopener"
+                        >Демо</a
+                      >
+                    </li>
+                    <li class="card-links_item">
+                      <a
+                        class="card-link code"
+                        href="https://github.com/delawere/tinyone"
+                        target="_blank"
+                        rel="noopener"
+                        >Код</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="card card_note">
+              <picture class="lazy">
+                <source
+                  type="image/webp"
+                  srcset="../img/placeholders/grey_ph.png"
+                  data-srcset="../img/webp/notes.webp"
+                />
+                <source
+                  type="image/jpeg"
+                  srcset="../img/placeholders/grey_ph.png"
+                  data-srcset="../img/notes.png"
+                />
+                <img
+                  class="card_img"
+                  src="../img/placeholders/grey_ph.png"
+                  data-src="../img/notes.png"
+                  alt="application_photo"
+                />
+              </picture>
+              <div class="card-description">
+                <h3 class="card-description__title">
+                  <span class="card-description__title_type"
+                    >Веб-приложение</span
+                  ><span class="card-description__title_name">Notes</span>
+                </h3>
+                <div class="card-links">
+                  <ul class="cald-links_list">
+                    <li class="card-links_item">
+                      <a
+                        class="card-link demo"
+                        href="https://calendarwithtodo.herokuapp.com/"
+                        target="_blank"
+                        rel="noopener"
+                        >Демо</a
+                      >
+                    </li>
+                    <li class="card-links_item">
+                      <a
+                        class="card-link code"
+                        href="https://github.com/delawere/react-meeting-planer-app"
+                        target="_blank"
+                        rel="noopener"
+                        >Код</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="card card_memory">
+              <picture class="lazy">
+                <source
+                  type="image/webp"
+                  srcset="../img/placeholders/green_ph.png"
+                  data-srcset="../img/webp/memory.webp"
+                />
+                <source
+                  type="image/jpeg"
+                  srcset="../img/placeholders/green_ph.png"
+                  data-srcset="../img/memory.png"
+                />
+                <img
+                  class="card_img"
+                  src="../img/placeholders/green_ph.png"
+                  data-src="../img/memory.png"
+                  alt="application_photo"
+                />
+              </picture>
+              <div class="card-description">
+                <h3 class="card-description__title">
+                  <span class="card-description__title_type"
+                    >Браузерная игра</span
+                  ><span class="card-description__title_name">Memory</span>
+                </h3>
+                <div class="card-links">
+                  <ul class="cald-links_list">
+                    <li class="card-links_item">
+                      <a
+                        class="card-link demo"
+                        href="https://delawere.github.io/"
+                        target="_blank"
+                        rel="noopener"
+                        >Демо</a
+                      >
+                    </li>
+                    <li class="card-links_item">
+                      <a
+                        class="card-link code"
+                        href="https://github.com/delawere/delawere.github.io"
+                        target="_blank"
+                        rel="noopener"
+                        >Код</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="section resume-section hidden">
+        <div class="section-wrapper">
+          <div class="section__title-wrapper">
+            <h2 class="section__title section__title_green-bg">
+              Образование и карьера
+            </h2>
+          </div>
+          <div class="resume-section_timeline-block">
+            <ul class="jobs-list">
+              <li class="job-list_item html-academy">
+                <div class="job-item_text">
+                  <h3>
+                    <span class="job-list__title">HTML-Academy</span
+                    ><span class="job-item_period">Март 2018 - Май 2018</span>
+                  </h3>
+                  <p class="paragraph">
+                    <span class="label_bold">Результаты: </span
+                    ><span class="label"
+                      >Прошел курс Java Script уровень 1 и успешно защитил
+                      экзаменационный проект.</span
+                    ><span class="label_newline"
+                      >Учебный и экзаменационный проекты можно найти на
+                      gitHub.</span
+                    >
+                  </p>
+                  <footer class="job-list-item_footer">
+                    <ul class="company-info-list">
+                      <li class="company-info-list_item">
+                        <a
+                          class="company-info_link"
+                          href="https://goo.gl/maps/epiuZkArqgLNd2kz8"
+                          target="_blank"
+                          rel="noopener"
+                          >Россия, Санкт-Петербург</a
+                        >
+                      </li>
+                      <li class="company-info-list_item">
+                        <a
+                          class="company-info_link"
+                          href="https://htmlacademy.ru/"
+                          target="_blank"
+                          rel="noopener"
+                          >Сайт</a
+                        >
+                      </li>
+                    </ul>
+                  </footer>
+                </div>
+              </li>
+              <li class="job-list_item bars-group">
+                <div class="job-item_text">
+                  <h3>
+                    <span class="job-list__title">BARS-Group</span
+                    ><span class="job-item_period"
+                      >Июнь 2018 - настоящее время</span
+                    >
+                  </h3>
+                  <p class="paragraph position">
+                    <span class="label_bold">Должность: </span
+                    ><span class="label">FullStack Developer</span>
+                  </p>
+                  <p class="paragraph stack">
+                    <span class="label_bold">Технологии: </span
+                    ><span class="label"
+                      >JS, CSS, PHP, SQL, PL/SQL, Oracle</span
+                    >
+                  </p>
+                  <p class="paragraph achiev">
+                    <span class="label_bold">Результаты: </span
+                    ><span class="label">
+                      В компании я работаю над крупным проектом, дополняю
+                      документацию, занимаюсь улучшением инструментов
+                      разработчика и обучаю новых сотрудников.</span
+                    >
+                  </p>
+                  <footer class="job-list-item_footer">
+                    <ul class="company-info-list">
+                      <li class="company-info-list_item">
+                        <a
+                          class="company-info_link"
+                          href="https://goo.gl/maps/r3YzqW5rQ2enyj6V6"
+                          target="_blank"
+                          rel="noopener"
+                          >Россия, Казань</a
+                        >
+                      </li>
+                      <li class="company-info-list_item">
+                        <a
+                          class="company-info_link"
+                          href="https://bars.group/"
+                          target="_blank"
+                          rel="noopener"
+                          >Сайт</a
+                        >
+                      </li>
+                    </ul>
+                  </footer>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer section contacts-section section_bg-blue hidden">
+      <div class="section-wrapper">
+        <div class="section__title-wrapper">
+          <h2 class="section__title">Контакты</h2>
+        </div>
+        <ul class="contacts-list">
+          <li class="contacts-list_item">
+            <a class="label__bold phone" href="tel:+79503253688" rel="nofollow"
+              >Телефон</a
+            >
+          </li>
+          <li class="contacts-list_item">
+            <a class="label__bold email" href="mailto:delawere2008@gmail.com"
+              >Email</a
+            >
+          </li>
+          <li class="contacts-list_item">
+            <a
+              class="label__bold"
+              href="https://t.me/dmitriyZhiganov"
+              target="_blank"
+              rel="noopener"
+              >Telegram</a
+            >
+          </li>
+          <li class="contacts-list_item">
+            <a
+              class="label__bold"
+              href="https://github.com/delawere"
+              target="_blank"
+              rel="noopener"
+              >GitHub</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="copyright">Copyright &#169; 2019 Zhiganov Dmitriy</div>
+    </footer>
+    <script
+      src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"
+      defer
+    ></script>
+    <script
+      src="https://www.gstatic.com/firebasejs/6.2.4/firebase-firestore.js"
+      defer
+    ></script>
+    <script src="../js/main.min.js" defer></script>
+  </body>
+</html>
