@@ -62,7 +62,7 @@
   document.addEventListener('DOMContentLoaded', () => {
     const radioEn = document.querySelector('.radio__en');
     const radioRu = document.querySelector('.radio__ru');
-    location.pathname === '/ru/'
+    location.pathname === '/zhiganov/ru/'
       ? (radioRu.checked = true)
       : (radioEn.checked = true);
   });
