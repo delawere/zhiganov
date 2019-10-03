@@ -8,8 +8,6 @@
   const LANG_MENU_CLASS_HIDDEN = 'lang-menu_hidden';
   const LANG_MENU_CLASS_ACTIVE = 'lang-button_active';
   const LANG_MENU_ITEMS = LANG_MENU.querySelectorAll('.lang-menu__item');
-  const RADIO_BUTTONS = LANG_MENU.querySelectorAll('.lang-menu__input');
-  const BODY_COVER = document.querySelector('.body-cover-bg');
 
   const findAncestor = (target, parentClassName) => {
     while (
@@ -41,30 +39,35 @@
     LANG_BUTTON.classList.toggle(LANG_MENU_CLASS_ACTIVE);
 
     if (!LANG_MENU.classList.contains(LANG_MENU_CLASS_HIDDEN)) {
+      LANG_BUTTON.classList.add('button_active');
       BODY.addEventListener('click', onOutsideClick);
+    } else {
+      LANG_BUTTON.classList.remove('button_active');
+      BODY.removeEventListener('click', onOutsideClick);
     }
-  };
-
-  const hideBodyCover = () => {
-    onClosePopup();
-    BODY_COVER.classList.add('body-cover-bg_hidden');
   };
 
   LANG_MENU_ITEMS.forEach(item => {
     item.addEventListener('click', event => {
       const currentTarget = event.currentTarget;
       const radioButton = currentTarget.querySelector('.lang-menu__input');
+      const lang = currentTarget.querySelector('.lang-menu__label').dataset
+        .lang;
 
-      BODY_COVER.classList.remove('body-cover-bg_hidden');
       radioButton.checked = true;
-      
-      window.changeLang(currentTarget.dataset.lang, () =>
-        setTimeout(hideBodyCover, 500)
-      );
+      location.replace(lang);
     });
   });
 
   LANG_BUTTON.addEventListener('click', onLangButtonClick);
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const radioEn = document.querySelector('.radio__en');
+    const radioRu = document.querySelector('.radio__ru');
+    location.pathname === '/ru/'
+      ? (radioRu.checked = true)
+      : (radioEn.checked = true);
+  });
 
   window.findAncestor = findAncestor;
   window.onOutsideClick = onOutsideClick;

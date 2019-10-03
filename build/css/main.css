@@ -308,6 +308,7 @@ template {
 :root {
   box-sizing: border-box;
   font-size: 3vw;
+  color-scheme: light dark;
 }
 @media (min-width: 800px) {
   :root {
@@ -660,17 +661,27 @@ body {
 }
 @media screen and (prefers-color-scheme: dark) {
   .lang-button:hover {
-    color: #ff797b;
+    color: #fff;
   }
 }
 .lang-button:hover > svg {
   fill: #fff;
 }
 .lang-button_active {
-  color: #d31010;
+  background-color: #f25757;
+  color: #fff;
 }
 .lang-button_active > svg {
-  fill: #d31010;
+  fill: #fff;
+}
+@media screen and (prefers-color-scheme: dark) {
+  .lang-button_active {
+    color: #fff;
+    background-color: #ff797b;
+  }
+  .lang-button_active > svg {
+    fill: #fff;
+  }
 }
 .lang-button__caption {
   font-size: 0;
@@ -720,6 +731,12 @@ body {
     font-size: 1rem;
   }
 }
+@media screen and (prefers-color-scheme: dark) {
+  .lang-menu {
+    color: #fafafa;
+    background-color: #181818;
+  }
+}
 .lang-menu_hidden {
   transform: translateY(2em);
   opacity: 0;
@@ -737,6 +754,11 @@ body {
 }
 .lang-menu__item:hover {
   background-color: #d3d3d3;
+}
+@media screen and (prefers-color-scheme: dark) {
+  .lang-menu__item:hover {
+    background-color: #3e3e3e;
+  }
 }
 .lang-menu__label {
   cursor: pointer;
@@ -998,6 +1020,12 @@ body {
   opacity: 0;
   transition: opacity 0.45s;
 }
+@media screen and (prefers-color-scheme: dark) {
+  .card-description {
+    background-color: #181818;
+    color: #fff;
+  }
+}
 .card-description__title {
   margin: 0;
   padding: 0;
@@ -1144,7 +1172,7 @@ body {
   width: 50%;
   padding: 0;
   margin: 0 auto;
-  margin-top: 5em;
+  margin-top: 3em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1218,7 +1246,7 @@ body {
 }
 .copyright {
   color: #3e4856;
-  margin-top: 6em;
+  margin-top: 4em;
   text-align: center;
 }
 .marked {

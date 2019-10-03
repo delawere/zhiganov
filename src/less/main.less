@@ -15,6 +15,7 @@
 /* Dark Theme */
 @dark-color: #fafafa;
 @dark-background-color: #121212;
+@dark-accent-bg-color: rgb(24, 24, 24);
 
 @tablet: 800px;
 @large-tablet: 1000px;
@@ -34,6 +35,7 @@
 :root {
   box-sizing: border-box;
   font-size: 3vw;
+  color-scheme: light dark;
 
   @media (min-width: @tablet) {
     font-size: calc(0.75em + 0.2vw);
@@ -399,7 +401,7 @@ body {
     background-color: @mainRed;
 
     @media screen and (prefers-color-scheme: dark) {
-      color: @dark-main-red;
+      color: @white;
     }
   }
 
@@ -409,10 +411,20 @@ body {
 }
 
 .lang-button_active {
-  color: darken(@mainRed, 20%);
+  background-color: @mainRed;
+  color: @white;
 
   & > svg {
-    fill: darken(@mainRed, 20%);
+    fill: @white;
+  }
+
+  @media screen and (prefers-color-scheme: dark) {
+    color: @white;
+    background-color: @dark-main-red;
+
+    & > svg {
+      fill: @white;
+    }
   }
 }
 
@@ -461,6 +473,11 @@ body {
     right: 0.25em;
     font-size: 1rem;
   }
+
+  @media screen and (prefers-color-scheme: dark) {
+    color: @dark-color;
+    background-color: @dark-accent-bg-color;
+  }
 }
 
 .lang-menu_hidden {
@@ -482,6 +499,12 @@ body {
 
   &:hover {
     background-color: #d3d3d3;
+  }
+
+  @media screen and (prefers-color-scheme: dark) {
+    &:hover {
+      background-color: lighten(@dark-accent-bg-color, 15%);
+    }
   }
 }
 
@@ -781,6 +804,11 @@ body {
   transform: translate(-50%, -50%);
   opacity: 0;
   transition: opacity 0.45s;
+
+  @media screen and (prefers-color-scheme: dark) {
+    background-color: @dark-accent-bg-color;
+    color: @white;
+  }
 }
 
 .card-description__title {
@@ -944,7 +972,7 @@ body {
   width: 50%;
   padding: 0;
   margin: 0 auto;
-  margin-top: 5em;
+  margin-top: 3em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1024,7 +1052,7 @@ body {
 
 .copyright {
   color: @copyright;
-  margin-top: 6em;
+  margin-top: 4em;
   text-align: center;
 }
 
