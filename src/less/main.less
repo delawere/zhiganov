@@ -907,6 +907,10 @@ body {
 .job-list__title {
   color: @black;
   font-family: Arial, Helvetica, sans-serif;
+
+  @media screen and (prefers-color-scheme: dark) {
+    color: @white;
+  }
 }
 
 .job-item_period {
