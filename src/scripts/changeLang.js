@@ -36,7 +36,6 @@
   const onLangButtonClick = event => {
     event.stopPropagation();
     LANG_MENU.classList.toggle(LANG_MENU_CLASS_HIDDEN);
-    LANG_BUTTON.classList.toggle(LANG_MENU_CLASS_ACTIVE);
 
     if (!LANG_MENU.classList.contains(LANG_MENU_CLASS_HIDDEN)) {
       LANG_BUTTON.classList.add('button_active');
@@ -51,11 +50,10 @@
     item.addEventListener('click', event => {
       const currentTarget = event.currentTarget;
       const radioButton = currentTarget.querySelector('.lang-menu__input');
-      const lang = currentTarget.querySelector('.lang-menu__label').dataset
-        .lang;
+      const lang = currentTarget.querySelector('.lang-menu__label').dataset.lang;
 
       radioButton.checked = true;
-      location.replace(lang);
+      location.replace(`/zhiganov${lang}`);
     });
   });
 
