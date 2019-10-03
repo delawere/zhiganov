@@ -38,10 +38,10 @@
     LANG_MENU.classList.toggle(LANG_MENU_CLASS_HIDDEN);
 
     if (!LANG_MENU.classList.contains(LANG_MENU_CLASS_HIDDEN)) {
-      LANG_BUTTON.classList.add('button_active');
+      LANG_BUTTON.classList.add(LANG_MENU_CLASS_ACTIVE);
       BODY.addEventListener('click', onOutsideClick);
     } else {
-      LANG_BUTTON.classList.remove('button_active');
+      LANG_BUTTON.classList.remove(LANG_MENU_CLASS_ACTIVE);
       BODY.removeEventListener('click', onOutsideClick);
     }
   };
