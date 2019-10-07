@@ -956,9 +956,21 @@ body {
 }
 
 .company-info-list_item > a {
-  text-decoration: none;
+  text-decoration: underline;
   display: inline-block;
   color: @black;
+
+  &:hover {
+    color: @mainRed;
+  }
+  
+  @media screen and (prefers-color-scheme: dark) {
+    color: @white;
+
+    &:hover {
+      color: @dark-main-red;
+    }
+  }
 }
 
 .label_newline {

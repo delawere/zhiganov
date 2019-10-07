@@ -1160,9 +1160,20 @@ body {
   }
 }
 .company-info-list_item > a {
-  text-decoration: none;
+  text-decoration: underline;
   display: inline-block;
   color: #272727;
+}
+.company-info-list_item > a:hover {
+  color: #f25757;
+}
+@media screen and (prefers-color-scheme: dark) {
+  .company-info-list_item > a {
+    color: #fff;
+  }
+  .company-info-list_item > a:hover {
+    color: #ff797b;
+  }
 }
 .label_newline {
   padding-top: 1em;
